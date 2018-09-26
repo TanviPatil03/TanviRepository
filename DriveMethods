@@ -1,48 +1,48 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode;\\ First a package is imported from FTC, where basic terms will be predefined
 
 
 
-public class DriveMethods extends HardwarePushBot{
-
-    public static void driveRight(double speed){
-        rightFrontDrive.setPower(speed);
-        rightBackDrive.setPower(speed);
+public class DriveMethods extends HardwarePushBot{ \\this refers to the methods for all hardware components,ex. wheel and glyph lift
+\\ the class name is DriveMwethods lol
+    public static void driveRight(double speed){  \\ the method is driveRight
+        rightFrontDrive.setPower(speed);\\ the wheels are named ( rightFrontDrive & rightBackDrive)
+        rightBackDrive.setPower(speed);\\ the power is set to "speed", and both of these wheels are used to drive the robot to the right
     }
 
-    public static void driveLeft(double speed){
-        leftFrontDrive.setPower(speed);
-        leftBackDrive.setPower(speed);
-    }
-
-    
-    public static void stopRightMotors() { 
-        rightFrontDrive.setPower(0);
-        rightBackDrive.setPower(0);
-    }
-
-    public static void stopLeftMotors(){
-        leftFrontDrive.setPower(0);
-        leftBackDrive.setPower(0);
+    public static void driveLeft(double speed){ \\ the method is driveleft
+        leftFrontDrive.setPower(speed);\\ the wheels are named (leftFrontDrive & leftBackDrive) , power is set to "speed"
+        leftBackDrive.setPower(speed);\\ these wheels are used to drive the robot to the left
     }
 
     
-
-    public static void glyphLift(double speed){
-        glyphLift.setPower(speed);
+    public static void stopRightMotors() { \\ the method is stopRightMotors
+        rightFrontDrive.setPower(0);\\ The two named wheels power is set to 0
+        rightBackDrive.setPower(0);\\ this is to ensure that the robot does not randomly start moving
     }
 
-    public static void openGlyph (){
-        glyphLiftRight.setPosition(0.55);//0.55
-        glyphLiftLeft.setPosition(0.4);//0.4
-        glyphLiftRight2.setPosition(0.55);
-        glyphLiftLeft2.setPosition(0.4);
+    public static void stopLeftMotors(){\\ the method is stopLeftMotors
+        leftFrontDrive.setPower(0);\\ the two named wheels power is set to 0
+        leftBackDrive.setPower(0);\\ this is to ensure that the robot does nor start randomly moving
     }
 
-    public static void closeGlyph (){
-        glyphLiftRight.setPosition(0.25);
-        glyphLiftLeft.setPosition(0.6);
-        glyphLiftRight2.setPosition(0.25);
-        glyphLiftLeft2.setPosition(0.6);
+    
+
+    public static void glyphLift(double speed){\\ the method is called glyph lift, this means that the lines below now is reffering to the glyph lift
+        glyphLift.setPower(speed);\\ the power of the glyph lift is set to "speed"
+    }
+
+    public static void openGlyph (){\\ the method is openGlyph, meaning that the lines below refer to how to open the glyph
+        glyphLiftRight.setPosition(0.55);//0.55\\ the glyph lift side is named (glyphLiftRight) it is set to open at the position 0.55
+        glyphLiftLeft.setPosition(0.4);//0.4\\ the glyph lift side is named (glyphLiftLeft) it is set to open at a position of 0.4
+        glyphLiftRight2.setPosition(0.55);\\ the glyph lift side is named and is set to open to a position of 0.55
+        glyphLiftLeft2.setPosition(0.4);\\ the glyph lift side is named and is set to open to a position of 0.4
+    }
+
+    public static void closeGlyph (){\\ this method is closeGlyph, meaning that the lines below refer to how to close the glyph
+        glyphLiftRight.setPosition(0.25);\\ the glyph lift side is named (glyphLiftRight) it is set to close at the position 0.25
+        glyphLiftLeft.setPosition(0.6);\\the glyph lift side is named (glyphLiftLeft) it is set to close at a position of 0.6
+        glyphLiftRight2.setPosition(0.25);\\  the glyph lift side is named and is set to close to a position of 0.25
+        glyphLiftLeft2.setPosition(0.6); the glyph lift side is named and is set to close to a position of 0.6
     }
 
 }
