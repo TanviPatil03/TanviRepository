@@ -13,22 +13,23 @@ public class HardwarePushBot{\\ class is Hardware pushbot refers to all hardware
     public static DcMotor rightBackDrive = null;
     public static DcMotor leftBackDrive = null;
 
-    public static DcMotor glyphLift = null;
-    public static Servo glyphLiftRight = null;
+    public static DcMotor glyphLift = null; 
+    public static Servo glyphLiftRight = null;\\ the lift sides are named and the servos are set to null
     public static Servo glyphLiftLeft = null;
     public static Servo glyphLiftRight2 = null;
     public static Servo glyphLiftLeft2 = null;
 
-    //public static Servo grabRelic = null;
-    //public static DcMotor relicPosition = null;
+    //public static Servo grabRelic = null;\\ relic code is listed here
+    //public static DcMotor relicPosition = null;\\ the servos are set to null, so is the dcmotor
+    \\ this refers to how to position the relic and grabbing the relic
 
-    public static ColorSensor colorSense = null;
-    public static Servo colorSensorArm = null;
-    public static Servo colorSensorArmRotate = null;
+    public static ColorSensor colorSense = null;\\ colorsensor is referred to here
+    public static Servo colorSensorArm = null;\\ the servo of the arm is set to null
+    public static Servo colorSensorArmRotate = null;\\ the servo for the rotation of the arm is set to null
 
     /* local OpMode members. */
     public HardwareMap hwMap           =  null;
-    private ElapsedTime period  = new ElapsedTime();
+    private ElapsedTime period  = new ElapsedTime();\\ time is used as a factor
 
     /* Constructor */
     public HardwarePushBot(){
@@ -37,12 +38,12 @@ public class HardwarePushBot{\\ class is Hardware pushbot refers to all hardware
     /* Initialize standard Hardware interfaces */
     public void init(HardwareMap ahwMap) {
         hwMap = ahwMap;
-        rightFrontDrive = hwMap.dcMotor.get("rfd"); //0
+        rightFrontDrive = hwMap.dcMotor.get("rfd"); //0 \\ wheels are named 
         leftFrontDrive = hwMap.dcMotor.get("lfd");  //1
         rightBackDrive = hwMap.dcMotor.get("rbd");  //2
         leftBackDrive = hwMap.dcMotor.get("lbd");   //3
 
-        glyphLift = hwMap.dcMotor.get("gl");        //1
+        glyphLift = hwMap.dcMotor.get("gl");        //1\\ glyph lifts are named
         glyphLiftRight = hwMap.servo.get("glr");    //2
         glyphLiftLeft = hwMap.servo.get("gll");     //3
         glyphLiftRight2 = hwMap.servo.get("glr2");  //4
@@ -57,16 +58,16 @@ public class HardwarePushBot{\\ class is Hardware pushbot refers to all hardware
         colorSensorArmRotate = hwMap.servo.get("csa1");
 
         rightFrontDrive.setPower(0);
-        leftFrontDrive.setPower(0);
+        leftFrontDrive.setPower(0); \\ power is set to 0 of the wheels
         rightBackDrive.setPower(0);
         leftBackDrive.setPower(0);
 
-        rightFrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        rightFrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER); \\ means that it runs with time, instead of having to use the lengthy calculations, its easier.
         leftFrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightBackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         leftBackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        rightFrontDrive.setDirection(DcMotor.Direction.FORWARD);
+        rightFrontDrive.setDirection(DcMotor.Direction.FORWARD);\ the direction is set in these lines
         leftFrontDrive.setDirection(DcMotor.Direction.REVERSE);
         rightBackDrive.setDirection(DcMotor.Direction.FORWARD);
         leftBackDrive.setDirection(DcMotor.Direction.REVERSE);
