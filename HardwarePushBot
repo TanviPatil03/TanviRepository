@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 
 public class HardwarePushBot{\\ class is Hardware pushbot refers to all hardware components
-    public static DcMotor rightFrontDrive = null;\\ dc motors are named
+    public static DcMotor rightFrontDrive = null;\\ dc motors are named and set to the variable null, in which its empty.
     public static DcMotor leftFrontDrive = null;
     public static DcMotor rightBackDrive = null;
     public static DcMotor leftBackDrive = null;
