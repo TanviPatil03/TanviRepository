@@ -8,11 +8,13 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+\\ packages imported from ftc 
+
 
 
 @TeleOp(name="TeleOp", group="group")
 
-public class New_TeleOp extends LinearOpMode{
+public class New_TeleOp extends LinearOpMode{ \\ class name is New_TeleOp
 
     public static HardwarePushBot robot = new HardwarePushBot();
     public static ElapsedTime runTime = new ElapsedTime();
@@ -20,21 +22,22 @@ public class New_TeleOp extends LinearOpMode{
     @Override
     public void runOpMode() throws InterruptedException {
 
-        robot.init(hardwareMap);
+        robot.init(hardwareMap);\\ intialization
 
-        telemetry.addData("Status", "Initialized");
-        telemetry.addData("Hello Driver", "Press Play Button");
+        telemetry.addData("Status", "Initialized");\\ telemetry will keep track of time, u can set it to tell how much time is left also
+        telemetry.addData("Hello Driver", "Press Play Button");\\ this message will show up on the phone
         telemetry.update();
 
         waitForStart();
         while (opModeIsActive()) {
 
-            double RIGHTPOW = -gamepad1.right_stick_y * 0.8;
+            double RIGHTPOW = -gamepad1.right_stick_y * 0.8;\\ game pad is the controllers
             double LEFTPOW = -gamepad1.left_stick_y * 0.8;
             double REVERSE_THRES = -0.5;
             double FORWARD_THRES = 0.5;
             double drive_Speed = 0.6;
-            double turn_Speed = 0.4;
+            double turn_Speed = 0.4;\
+            \\ referring to robot controls of wheel
 
             double LIFTPOW = -gamepad2.left_stick_y;
             double UP_THRES = 0.5;
@@ -57,9 +60,10 @@ public class New_TeleOp extends LinearOpMode{
             }else if(RIGHTPOW > FORWARD_THRES && LEFTPOW < REVERSE_THRES){
                 DriveMethods.driveLeft(LEFTPOW * turn_Speed);
                 DriveMethods.driveRight(RIGHTPOW * turn_Speed);
+                \\ if statements using data type boolean, in which if this is true it will do something, but if it is false it will do something else
             }
 
-            if(LIFTPOW < UP_THRES && LIFTPOW > DOWN_THRES) {
+            if(LIFTPOW < UP_THRES && LIFTPOW > DOWN_THRES) {\\ lift power of the vertical movement of the lift
                 DriveMethods.glyphLift(0);
 
             }else if(LIFTPOW > UP_THRES){
@@ -70,14 +74,14 @@ public class New_TeleOp extends LinearOpMode{
             }
 
             if(gamepad2.b) {
-                DriveMethods.openGlyph();
+                DriveMethods.openGlyph(); \\ gamepad1 refers to wheels, where as gamepad2 refers to attachments, for example glyph lift
             }
             if(gamepad2.a){
                 DriveMethods.closeGlyph();
             }
 
             telemetry.addData("Status", "Run Time: " + runTime.toString());
-            telemetry.addData("Motors", "power (%.2f)");
+            telemetry.addData("Motors", "power (%.2f)"); \\ telemtry deals with time and the tracking of it
             telemetry.update();
         }
     }
