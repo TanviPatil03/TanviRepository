@@ -20,9 +20,9 @@ public class DriveMethods extends HardwarePushBot{ \\this refers to the methods 
         rightBackDrive.setPower(0);\\ this is to ensure that the robot does not randomly start moving
     }
 
-    public static void stopLeftMotors(){\\ the method is stopLeftMotors
-        leftFrontDrive.setPower(0);\\ the two named wheels power is set to 0
-        leftBackDrive.setPower(0);\\ this is to ensure that the robot does nor start randomly moving
+    public static void stopLeftMotors(){\\ 
+        leftFrontDrive.setPower(0);\\ 
+        leftBackDrive.setPower(0);\\ 
     }
 
     
@@ -34,15 +34,15 @@ public class DriveMethods extends HardwarePushBot{ \\this refers to the methods 
     public static void openGlyph (){\\ the method is openGlyph, meaning that the lines below refer to how to open the glyph
         glyphLiftRight.setPosition(0.55);//0.55\\ the glyph lift side is named (glyphLiftRight) it is set to open at the position 0.55
         glyphLiftLeft.setPosition(0.4);//0.4\\ the glyph lift side is named (glyphLiftLeft) it is set to open at a position of 0.4
-        glyphLiftRight2.setPosition(0.55);\\ the glyph lift side is named and is set to open to a position of 0.55
-        glyphLiftLeft2.setPosition(0.4);\\ the glyph lift side is named and is set to open to a position of 0.4
+        glyphLiftRight2.setPosition(0.55);
+        glyphLiftLeft2.setPosition(0.4);
     }
 
     public static void closeGlyph (){\\ this method is closeGlyph, meaning that the lines below refer to how to close the glyph
         glyphLiftRight.setPosition(0.25);\\ the glyph lift side is named (glyphLiftRight) it is set to close at the position 0.25
         glyphLiftLeft.setPosition(0.6);\\the glyph lift side is named (glyphLiftLeft) it is set to close at a position of 0.6
-        glyphLiftRight2.setPosition(0.25);\\  the glyph lift side is named and is set to close to a position of 0.25
-        glyphLiftLeft2.setPosition(0.6); the glyph lift side is named and is set to close to a position of 0.6
+        glyphLiftRight2.setPosition(0.25);
+        glyphLiftLeft2.setPosition(0.6); 
     }
 
 }
