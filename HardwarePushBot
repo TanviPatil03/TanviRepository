@@ -4,10 +4,11 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
+\\ imported packages from FTC with predefined terms
 
 
-public class HardwarePushBot{
-    public static DcMotor rightFrontDrive = null;
+public class HardwarePushBot{\\ class is Hardware pushbot refers to all hardware components
+    public static DcMotor rightFrontDrive = null;\\ dc motors are named
     public static DcMotor leftFrontDrive = null;
     public static DcMotor rightBackDrive = null;
     public static DcMotor leftBackDrive = null;
